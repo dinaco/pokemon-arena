@@ -20,23 +20,6 @@ window.onload = () => {
   const cWidth = canvas.width;
   const cHeight = canvas.height;
 
-  const drawCanvas = (x, y, w, h, color) => {
-    ctx.fillStyle = color;
-    ctx.fillRect(x, y, w, h);
-  };
-
-  //Saved properties - fillStyle, strokeStyle, font, shadow, blur, transformations
-
-  /* drawCanvas(10, 20, 60, 60, 'turquoise');
-    ctx.save();
-    drawCanvas(100, 150, 60, 60, 'orangeRed');
-    ctx.save();
-    drawCanvas(150, 250, 60, 60, 'magenta');
-    ctx.restore();
-    drawCanvas(300, 150, 60, 60);
-    ctx.restore();
-    drawCanvas(400, 20, 60, 60); */
-
   // setTimeout, setInterval, requestAnimationFrame
 
   const color = {
@@ -62,20 +45,6 @@ window.onload = () => {
   function clearCanvas() {
     ctx.clearRect(0, 0, cWidth, cHeight);
   }
-  /* let speed1 = 0;
-    let speed2 = 600;
-    let speed3 = 700;
-    const updateCanvas = () => {
-      speed1 -= 1;
-      speed2 -= 2;
-      speed3 -= 3;
-      clearCanvas();
-      drawCanvas(speed1, 50, 100, 100, 'red');
-      drawCanvas(100, speed2, 100, 100, 'green');
-      drawCanvas(speed3, speed3, 100, 100, 'blue');
-      requestAnimationFrame(updateCanvas);
-    };
-    updateCanvas(); */
 
   // OOP - User inputs
 
@@ -94,24 +63,24 @@ window.onload = () => {
     }
 
     moveUp() {
-      this.y -= 25;
+      this.y - 50 >= 0 ? (this.y -= 50) : false;
     }
 
     moveDown() {
-      this.y += 25;
+      this.y + 100 <= cHeight ? (this.y += 50) : false;
     }
 
     moveLeft() {
-      this.x -= 25;
+      this.x - 50 >= 0 ? (this.x -= 50) : false;
     }
 
     moveRight() {
-      this.x += 25;
+      this.x + 100 <= cWidth ? (this.x += 50) : false;
     }
 
     reset() {
-      this.x = 25;
-      this.y = 25;
+      this.x = cWidth / 2;
+      this.y = cHeight / 2;
     }
 
     drawCharacter() {
@@ -120,8 +89,8 @@ window.onload = () => {
   }
 
   const caterpie = new Pokemon(
-    25,
-    25,
+    cWidth / 2 - 50,
+    cHeight / 2 - 50,
     "https://projectpokemon.org/images/shiny-sprite/caterpie.gif"
   );
   const bulbasaur = new Pokemon(
@@ -241,8 +210,19 @@ window.onload = () => {
   let tileX = 0;
   let tileY = 0;
 
+  const drawCanvas = () => {
+    //ctx.clearRect(0, 0, cWidth, cHeight);
+
+    let tilePattern = ctx.createPattern(tileImg, "repeat");
+    ctx.fillStyle = tilePattern;
+    ctx.fillRect(0, 0, cWidth, cHeight);
+
+    ctx.drawImage(tileImg, tileX % cWidth, tileY, 50, 50);
+  };
+
   const updateCanvas = () => {
-    clearCanvas();
+    // clearCanvas();
+    drawCanvas();
     ctx.fillText("Caterpie x: " + caterpie.x, 1000, 40);
     ctx.fillText("Caterpie y: " + caterpie.y, 1000, 100);
 
