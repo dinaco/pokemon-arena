@@ -1,40 +1,6 @@
 window.onload = () => {
-  const canvas = document.getElementById("game-board");
-  const ctx = canvas.getContext("2d");
-
-  const cWidth = canvas.width;
-  const cHeight = canvas.height;
-
-  // BEGIN LISTENERS
-
-  /*   document.getElementById("start-button").onclick = () => {
-      gameLogic.start();
-    }; */
-
-  document.addEventListener("keydown", (e) => {
-    switch (e.code) {
-      case "ArrowUp":
-        newPoke.moveUp();
-        break;
-      case "ArrowDown":
-        newPoke.moveDown();
-        break;
-      case "ArrowLeft":
-        newPoke.moveLeft();
-        break;
-      case "ArrowRight":
-        newPoke.moveRight();
-        break;
-      case "Space":
-        attack();
-        break;
-    }
-  });
-
-  // END LISTENERS
-
   // BEGIN COMPONENTS
-  class Pokemon {
+  /* class Pokemon {
     constructor(x, y, url) {
       this.x = x;
       this.y = y;
@@ -95,8 +61,8 @@ window.onload = () => {
       //ctx.setTransform(1,0,0,-1,0,canvas.height);
       //  }
     }
-  }
-  class Enemies extends Pokemon {
+  } */
+  /*   class Enemies extends Pokemon {
     constructor(x, y, url) {
       super(x, y, url);
     }
@@ -114,15 +80,15 @@ window.onload = () => {
           console.log("hit");
           attackList.pop();
           return true;
-          /*           return !(
-            this.x < enemies.x - 45 || this.x > enemies.x + enemies.width 
-          ); */
+          //         return !(
+          //  this.x < enemies.x - 45 || this.x > enemies.x + enemies.width 
+          //);
         }
       }
     }
-  }
+  } */
 
-  class Attack {
+  /*   class Attack {
     constructor(x, y, url) {
       this.x = x;
       this.y = y;
@@ -135,41 +101,15 @@ window.onload = () => {
     drawAttack() {
       ctx.drawImage(this.img, this.x, this.y, 100, 100);
     }
-  }
+  } */
   // END COMPONENTS
 
-  //BEGIN BACKGROUND
-
-  const tileImg = new Image();
-
-  tileImg.src = "/docs/assets/imgs/tile.jpg";
-
-  const drawBg = () => {
-    let tilePattern = ctx.createPattern(tileImg, "repeat");
-    ctx.fillStyle = tilePattern;
-    ctx.fillRect(0, 0, cWidth, cHeight);
-    ctx.drawImage(tileImg, 0, 0, 50, 50);
-  };
-
-  // END BACKGROUND
-
   //BEGIN IMAGES
-
-  const newPoke = new Pokemon(
-    cWidth / 2 - 50,
-    cHeight / 2 - 50,
-    "http://www.serebii.net/xy/pokemon/006.png"
-  );
-  /*   const bulbasaur = new Pokemon(
-    1100,
-    700,
-    "https://projectpokemon.org/images/normal-sprite/bulbasaur.gif"
-  ); */
 
   // END IMAGES
 
   // BEGIN FUNCTIONS
-  const enemies = [];
+  /*   const enemies = [];
   function updateEnemies() {
     for (let i = 0; i < enemies.length; i++) {
       enemies[i].drawCharacter();
@@ -194,8 +134,8 @@ window.onload = () => {
         );
       }
     }
-  }
-  const attackList = [];
+  } */
+  /*   const attackList = [];
   function attack() {
     for (let i = 0; i < attackList.length; i++) {
       if (attackList[i].x < 0 || attackList[i].x > cWidth) {
@@ -219,45 +159,21 @@ window.onload = () => {
         )
       );
     }
-  }
+  } */
 
-  function clearCanvas() {
-    ctx.clearRect(0, 0, cWidth, cHeight);
-  }
-  let points = 0;
-  function score(kills) {
-    points += kills;
-
-    (document.getElementById("score").innerHTML = `${points}`), 100, 50;
-  }
-
-  function kill() {
+  /*   function kill() {
     enemies.map((el, i) => {
       if (el.dead(el)) {
         enemies.splice([i], 1);
         score(10);
       }
     });
-  }
-
-  const updateCanvas = () => {
-    clearCanvas();
-    drawBg();
-    newPoke.drawCharacter();
-    newPoke.frames++;
-    updateEnemies();
-    attackList.length > 0 ? attack() : false;
-  };
-
-  const startGame = () => {
-    const intervalId = setInterval(() => {
-      updateCanvas();
-    }, 30);
-  };
+  } */
 
   // END FUNCTIONS
 
   // START FUNCTION
 
-  startGame();
+  const game = new Game();
+  game.start();
 };

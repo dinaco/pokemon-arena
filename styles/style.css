@@ -1,0 +1,33 @@
+html,
+body {
+  background-color: #85b9dd;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  padding: 5vw;
+  margin: 2vw;
+  border: 10px solid white;
+  border-radius: 15px;
+}
+header {
+  display: flex;
+  justify-content: flex-start;
+}
+header img {
+  width: 25vw;
+  height: 100%;
+  margin: 0 5vw;
+}
+#game-info {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}

@@ -4,19 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
     <title>Brawl Arena</title>
   </head>
   <body>
-    <div id="side-info">
-      <div id="score-info">Score: <span id="score">0</span></div>
+    <div class="container">
+      <header>
+        <img src="/docs/assets/imgs/pokemon-logo.png" alt="Pokemon logo" />
+        <h1>Pokemon Brawl Arena</h1>
+      </header>
+      <main>
+        <canvas width="900" height="600" id="game-board"></canvas>
+        <div id="game-info">
+          <div id="score-info">Score: <span id="score">0</span></div>
+          <div id="time-left-info">
+            Time Left: <span id="time-left">0</span>
+          </div>
+        </div>
+      </main>
     </div>
-    <canvas
-      width="900"
-      height="600"
-      id="game-board"
-      style="border: 10px solid black"
-    ></canvas>
-    <script src="/components.js"></script>
-    <script src="/main.js"></script>
+    <script src="/js/attack.js"></script>
+    <script src="/js/controls.js"></script>
+    <script src="/js/enemies.js"></script>
+    <script src="/js/player.js"></script>
+    <script src="/js/game.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
