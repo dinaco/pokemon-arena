@@ -8,6 +8,7 @@ body {
 }
 main {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   gap: 5vw;
@@ -19,6 +20,8 @@ main {
 header {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  margin-top: 2vw;
 }
 header img {
   width: 25vw;
@@ -30,4 +33,5 @@ header img {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  gap: 2vw;
 }

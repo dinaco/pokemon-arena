@@ -1,18 +1,16 @@
 class Enemies {
-  // not being generated using frames%120
-  // some enemies are not being hit properly
-  // best way to implement levels / images /type randomly?
-  // use fetch pokeapi?
-  constructor(game, x, y, url, level) {
+  // some enemies are not being hit properly (problem with dead function with this.x ou the attack function this.x or the x postion of the attck itself)
+  constructor(game, x, y, data) {
     this.game = game;
+    this.data = data;
     this.x = x;
     this.y = y;
     this.img = new Image();
-    this.img.src = url;
+    this.img.src = this.data.imgUrl[0];
     this.enemies = this.game.enemies;
-    this.level = level;
-    this.hpScore = 10 * this.level;
-    this.hp = 10 * this.level;
+    this.level = this.data.level;
+    this.hpScore = this.data.hp;
+    this.hp = this.data.hp;
   }
   drawCharacter() {
     this.game.ctx.drawImage(this.img, this.x, this.y, 100, 100);

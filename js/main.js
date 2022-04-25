@@ -161,15 +161,6 @@ window.onload = () => {
     }
   } */
 
-  /*   function kill() {
-    enemies.map((el, i) => {
-      if (el.dead(el)) {
-        enemies.splice([i], 1);
-        score(10);
-      }
-    });
-  } */
-
   // END FUNCTIONS
 
   // START FUNCTION

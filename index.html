@@ -11,11 +11,15 @@
     <div class="container">
       <header>
         <img src="/docs/assets/imgs/pokemon-logo.png" alt="Pokemon logo" />
-        <h1>Pokemon Brawl Arena</h1>
+        <h1>Brawl Arena</h1>
       </header>
       <main>
         <canvas width="900" height="600" id="game-board"></canvas>
         <div id="game-info">
+          <div class="description">
+            Use your arroes keys to move your pokemon and hit space to attack
+            your opponents.
+          </div>
           <div id="score-info">Score: <span id="score">0</span></div>
           <div id="time-left-info">
             Time Left: <span id="time-left">0</span>
@@ -23,6 +27,7 @@
         </div>
       </main>
     </div>
+    <script src="/js/data.js"></script>
     <script src="/js/attack.js"></script>
     <script src="/js/controls.js"></script>
     <script src="/js/enemies.js"></script>
