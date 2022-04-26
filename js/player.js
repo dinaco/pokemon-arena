@@ -8,8 +8,9 @@ class Pokemon {
     this.direction = "left";
     this.img = new Image();
     this.attackList = [];
-    this.level = this.data.level;
     this.pokeId = this.data.id;
+    this.imgSizeX = this.data.img.sizeX;
+    this.imgSizeY = this.data.img.sizeY;
   }
   attack() {
     if (this.attackList.length > 0) {
@@ -32,42 +33,45 @@ class Pokemon {
       this.attackList.push(
         new Attack(
           this,
-          this.direction !== "right" ? this.x : this.x + 200,
+          this.x,
+          //this.direction !== "right" ? this.x : this.x + 200,
           this.y
         )
       );
     }
   }
   moveUp() {
-    this.y - 100 >= 0 ? (this.y -= 50) : (this.y = 0);
+    this.y - 50 >= 0 ? (this.y -= 50) : false;
   }
   moveDown() {
-    this.y + 100 <= this.game.cHeight
-      ? (this.y += 50)
-      : (this.y = this.game.cHeight - 50);
+    this.y + 150 <= this.game.cHeight ? (this.y += 50) : false;
   }
   moveLeft() {
     this.direction = "left";
-    this.x - 100 >= 0 ? (this.x -= 50) : (this.x = 0);
+    this.x - 50 >= 0 ? (this.x -= 50) : false;
   }
   moveRight() {
     this.direction = "right";
-    this.x + 100 <= this.game.cWidth ? (this.x += 50) : this.x;
+    this.x + 150 <= this.game.cWidth ? (this.x += 50) : false;
   }
   reset() {
     this.x = cWidth / 2;
     this.y = cHeight / 2;
   }
   drawCharacter() {
-    this.img.src = this.data.imgUrl[1];
+    this.img.src = this.data.img.url[1];
     // this.game.ctx.scale(this.direction === "right" ? -1 : 1, 1);
     this.game.ctx.drawImage(
       this.img,
+      0,
+      0,
+      this.imgSizeX,
+      this.imgSizeY,
       this.x,
       // this.direction === "right" ? this.x * -1 : this.x,
       this.y,
-      100,
-      100
+      110,
+      110
     );
   }
 }

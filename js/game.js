@@ -9,7 +9,7 @@ class Game {
     this.cHeight = this.canvas.height;
     this.intervalId = null;
     this.randomPoke = null;
-    this.chosenPoke = 3;
+    this.chosenPoke = 4;
     this.newPoke = new Pokemon(
       this,
       this.cWidth / 2 - 50,
@@ -17,6 +17,7 @@ class Game {
       data[this.chosenPoke]
     );
     this.enemies = [];
+    this.obstacles = [];
     this.controls = null;
     this.frames = 0;
     this.points = 0;
@@ -35,6 +36,7 @@ class Game {
     this.ctx.clearRect(0, 0, this.width, this.height);
     this.frames++;
     this.drawBackground();
+    this.createObstacles();
     this.createEnemies();
     this.checkPowerUp();
     this.newPoke.attackList.length > 0 ? this.newPoke.attack() : false;
@@ -52,17 +54,17 @@ class Game {
     for (let i = 0; i < this.enemies.length; i++) {
       this.enemies[i].drawCharacter();
     }
-    if (this.enemies.length < 5) {
+    if (this.enemies.length < 9) {
       if (this.frames % 60 === 0) {
-        if (this.points >= 6000 && !this.enemies.some((e) => e.data.id == 12)) {
-          this.randomPoke = 12;
+        if (this.points >= 6000 && !this.enemies.some((e) => e.data.id == 13)) {
+          this.randomPoke = 13;
         } else if (
           this.points >= 1000 &&
-          !this.enemies.some((e) => e.data.id == 11)
+          !this.enemies.some((e) => e.data.id == 12)
         ) {
-          this.randomPoke = 11;
+          this.randomPoke = 12;
         } else {
-          this.randomPoke = Math.floor(Math.random() * 10 + 1);
+          this.randomPoke = Math.floor(Math.random() * 11 + 1);
         }
         let minX = 0;
         let maxX = this.cWidth - 100;
@@ -73,8 +75,25 @@ class Game {
         let maxY = this.cHeight - 100;
         let y = Math.floor(Math.random() * (maxY - minY) + minY);
 
-        this.enemies.push(new Enemies(this, x, y, data[this.randomPoke]));
+        this.enemies.push(new Enemies(this, x, y, data[this.randomPoke], 100));
       }
+    }
+  }
+  createObstacles() {
+    for (let i = 0; i < this.obstacles.length; i++) {
+      this.enemies[i].drawCharacter();
+    }
+    if (this.enemies.length < 4) {
+      let minX = 0;
+      let maxX = this.cWidth - 100;
+
+      let x = Math.floor(Math.random() * (maxX - minX) + minX);
+
+      let minY = 0;
+      let maxY = this.cHeight - 100;
+      let y = Math.floor(Math.random() * (maxY - minY) + minY);
+
+      this.enemies.push(new Enemies(this, x, y, data[0], 75));
     }
   }
   checkGameOver() {
@@ -119,6 +138,6 @@ class Game {
       this.cHeight / 2 - 50,
       data[0]
     );
-    this.newPoke.drawCharacter(this.newPoke.level);
+    this.newPoke.drawCharacter();
   }
 }

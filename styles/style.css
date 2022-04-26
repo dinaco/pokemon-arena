@@ -17,14 +17,8 @@ main {
   border: 10px solid white;
   border-radius: 15px;
 }
-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 2vw;
-}
-header img {
-  width: 25vw;
+#game-info img {
+  width: 15vw;
   height: 100%;
   margin: 0 5vw;
 }
