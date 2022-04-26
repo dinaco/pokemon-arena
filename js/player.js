@@ -23,9 +23,9 @@ class Pokemon {
           this.attackList.pop();
           return false;
         } else {
-          this.direction !== "right"
+          /*         this.direction !== "right"
             ? (this.attackList[i].x -= 20)
-            : (this.attackList[i].x += 20);
+            : (this.attackList[i].x += 20); */
           this.game.kill();
         }
       }
@@ -35,7 +35,8 @@ class Pokemon {
           this,
           this.x,
           //this.direction !== "right" ? this.x : this.x + 200,
-          this.y
+          this.y,
+          this.direction
         )
       );
     }

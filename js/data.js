@@ -28,16 +28,22 @@ const data = [
     hp: 10,
     sp: 10,
     attack: {
-      power: 5,
+      power: 2,
       weakness: { type: "fire", penalty: 0.8 },
-      bonus: { type: "water", powerBonus: 1.5 },
+      bonus: { type: "water", powerBonus: 1.2 },
     },
     type: "grass",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/001.png",
-        "http://www.serebii.net/Shiny/XY/001.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/bulbasaur.png",
+          "/docs/assets/imgs/pokemons/bulbasaur-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/bulbasaur-shiny.png",
+          "/docs/assets/imgs/pokemons/bulbasaur-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
@@ -53,9 +59,9 @@ const data = [
     hp: 20,
     sp: 20,
     attack: {
-      power: 10,
+      power: 3,
       weakness: { type: "fire", penalty: 0.8 },
-      bonus: { type: "water", powerBonus: 1.5 },
+      bonus: { type: "water", powerBonus: 1.2 },
     },
     type: "grass",
     img: {
@@ -78,9 +84,9 @@ const data = [
     hp: 50,
     sp: 50,
     attack: {
-      power: 30,
+      power: 4,
       weakness: { type: "fire", penalty: 0.8 },
-      bonus: { type: "water", powerBonus: 1.5 },
+      bonus: { type: "water", powerBonus: 1.2 },
     },
     type: "grass",
     img: {
@@ -103,9 +109,9 @@ const data = [
     hp: 10,
     sp: 10,
     attack: {
-      power: 5,
+      power: 2,
       weakness: { type: "water", penalty: 0.8 },
-      bonus: { type: "grass", powerBonus: 1.5 },
+      bonus: { type: "grass", powerBonus: 1.2 },
     },
     type: "fire",
     img: {
@@ -117,7 +123,10 @@ const data = [
       sizeY: 120,
     },
     accuracy: 50,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: [
+      "/docs/assets/imgs/attacks/fire-ball.png",
+      "/docs/assets/imgs/attacks/fire-ball-right.png",
+    ],
     evolve: true,
     evolveScore: 100,
   },
@@ -128,9 +137,9 @@ const data = [
     hp: 20,
     sp: 20,
     attack: {
-      power: 10,
+      power: 3,
       weakness: { type: "water", penalty: 0.8 },
-      bonus: { type: "grass", powerBonus: 1.5 },
+      bonus: { type: "grass", powerBonus: 1.2 },
     },
     type: "fire",
     img: {
@@ -153,9 +162,9 @@ const data = [
     hp: 50,
     sp: 50,
     attack: {
-      power: 30,
+      power: 4,
       weakness: { type: "water", penalty: 0.8 },
-      bonus: { type: "grass", powerBonus: 1.5 },
+      bonus: { type: "grass", powerBonus: 1.2 },
     },
     type: "fire",
     img: {
@@ -178,9 +187,9 @@ const data = [
     hp: 10,
     sp: 10,
     attack: {
-      power: 5,
+      power: 2,
       weakness: { type: "grass", penalty: 0.8 },
-      bonus: { type: "fire", powerBonus: 1.5 },
+      bonus: { type: "fire", powerBonus: 1.2 },
     },
     type: "water",
     img: {
@@ -203,9 +212,9 @@ const data = [
     hp: 20,
     sp: 20,
     attack: {
-      power: 10,
+      power: 3,
       weakness: { type: "grass", penalty: 0.8 },
-      bonus: { type: "fire", powerBonus: 1.5 },
+      bonus: { type: "fire", powerBonus: 1.2 },
     },
     type: "water",
     img: {
@@ -228,9 +237,9 @@ const data = [
     hp: 50,
     sp: 50,
     attack: {
-      power: 30,
+      power: 4,
       weakness: { type: "grass", penalty: 0.8 },
-      bonus: { type: "fire", powerBonus: 1.5 },
+      bonus: { type: "fire", powerBonus: 1.2 },
     },
     type: "water",
     img: {
@@ -253,9 +262,9 @@ const data = [
     hp: 10,
     sp: 10,
     attack: {
-      power: 5,
+      power: 2,
       weakness: { type: "grass", penalty: 0.8 },
-      bonus: { type: "water", powerBonus: 1.5 },
+      bonus: { type: "water", powerBonus: 1.2 },
     },
     type: "electric",
     img: {
@@ -278,9 +287,9 @@ const data = [
     hp: 20,
     sp: 20,
     attack: {
-      power: 10,
+      power: 3,
       weakness: { type: "grass", penalty: 0.8 },
-      bonus: { type: "water", powerBonus: 1.5 },
+      bonus: { type: "water", powerBonus: 1.2 },
     },
     type: "electric",
     img: {
@@ -299,11 +308,11 @@ const data = [
   {
     id: 12,
     name: "Mew",
-    level: 100,
-    hp: 5000,
-    sp: 5000,
+    level: 10,
+    hp: 200,
+    sp: 200,
     attack: {
-      power: 5000,
+      power: 200,
       weakness: { type: null, penalty: 1 },
       bonus: { type: null, powerBonus: 1 },
     },

@@ -52,14 +52,24 @@ class Game {
   }
   createEnemies() {
     for (let i = 0; i < this.enemies.length; i++) {
-      this.enemies[i].drawCharacter();
+      if (
+        this.enemies[i].x < 0 ||
+        this.enemies[i].x > this.cWidth ||
+        this.enemies[i].y < 0 ||
+        this.enemies[i].y > this.cHeight
+      ) {
+        console.log(this.enemies);
+        this.enemies.splice([i], 1);
+      } else {
+        this.enemies[i].drawCharacter();
+      }
     }
-    if (this.enemies.length < 9) {
+    if (this.enemies.length < 12) {
       if (this.frames % 60 === 0) {
-        if (this.points >= 6000 && !this.enemies.some((e) => e.data.id == 13)) {
+        if (this.points >= 950 && !this.enemies.some((e) => e.data.id == 13)) {
           this.randomPoke = 13;
         } else if (
-          this.points >= 1000 &&
+          this.points >= 750 &&
           !this.enemies.some((e) => e.data.id == 12)
         ) {
           this.randomPoke = 12;
@@ -83,7 +93,8 @@ class Game {
     for (let i = 0; i < this.obstacles.length; i++) {
       this.enemies[i].drawCharacter();
     }
-    if (this.enemies.length < 4) {
+
+    if (this.enemies.length < 5) {
       let minX = 0;
       let maxX = this.cWidth - 100;
 
@@ -108,7 +119,7 @@ class Game {
     clearInterval(this.intervalId);
   }
   drawBackground() {
-    this.background.src = "/docs/assets/imgs/tile.jpg";
+    this.background.src = "/docs/assets/imgs/grass-tile-1.png";
     let tilePattern = this.ctx.createPattern(this.background, "repeat");
     this.ctx.fillStyle = tilePattern;
     this.ctx.fillRect(0, 0, this.cWidth, this.cHeight);

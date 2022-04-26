@@ -29,3 +29,6 @@ main {
   align-items: center;
   gap: 2vw;
 }
+#last-damage {
+  display: block;
+}
