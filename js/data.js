@@ -13,7 +13,7 @@ const data = [
     type: null,
     img: {
       url: {
-        normal: ["/docs/assets/imgs/trees.png", "/docs/assets/imgs/trees.png"],
+        normal: ["docs/assets/imgs/trees.png", "docs/assets/imgs/trees.png"],
       },
       sizeX: 50,
       sizeY: 50,
@@ -39,12 +39,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/bulbasaur.png",
-          "/docs/assets/imgs/pokemons/bulbasaur-right.png",
+          "docs/assets/imgs/pokemons/bulbasaur.png",
+          "docs/assets/imgs/pokemons/bulbasaur-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/bulbasaur-shiny.png",
-          "/docs/assets/imgs/pokemons/bulbasaur-shiny-right.png",
+          "docs/assets/imgs/pokemons/bulbasaur-shiny.png",
+          "docs/assets/imgs/pokemons/bulbasaur-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -54,8 +54,8 @@ const data = [
     accuracy: 50,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 25,
       sizeY: 25,
@@ -78,12 +78,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/ivysaur.png",
-          "/docs/assets/imgs/pokemons/ivysaur-right.png",
+          "docs/assets/imgs/pokemons/ivysaur.png",
+          "docs/assets/imgs/pokemons/ivysaur-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/ivysaur-shiny.png",
-          "/docs/assets/imgs/pokemons/ivysaur-shiny-right.png",
+          "docs/assets/imgs/pokemons/ivysaur-shiny.png",
+          "docs/assets/imgs/pokemons/ivysaur-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -93,8 +93,8 @@ const data = [
     accuracy: 70,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 50,
       sizeY: 50,
@@ -117,12 +117,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/venusaur.png",
-          "/docs/assets/imgs/pokemons/venusaur-right.png",
+          "docs/assets/imgs/pokemons/venusaur.png",
+          "docs/assets/imgs/pokemons/venusaur-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/venusaur-shiny.png",
-          "/docs/assets/imgs/pokemons/venusaur-shiny-right.png",
+          "docs/assets/imgs/pokemons/venusaur-shiny.png",
+          "docs/assets/imgs/pokemons/venusaur-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -132,8 +132,8 @@ const data = [
     accuracy: 90,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 75,
       sizeY: 75,
@@ -156,12 +156,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/charmander.png",
-          "/docs/assets/imgs/pokemons/charmander-right.png",
+          "docs/assets/imgs/pokemons/charmander.png",
+          "docs/assets/imgs/pokemons/charmander-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/charmander-shiny.png",
-          "/docs/assets/imgs/pokemons/charmander-shiny-right.png",
+          "docs/assets/imgs/pokemons/charmander-shiny.png",
+          "docs/assets/imgs/pokemons/charmander-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -171,8 +171,8 @@ const data = [
     accuracy: 50,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 25,
       sizeY: 25,
@@ -195,12 +195,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/charmeleon.png",
-          "/docs/assets/imgs/pokemons/charmeleon-right.png",
+          "docs/assets/imgs/pokemons/charmeleon.png",
+          "docs/assets/imgs/pokemons/charmeleon-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/charmeleon-shiny.png",
-          "/docs/assets/imgs/pokemons/charmeleon-shiny-right.png",
+          "docs/assets/imgs/pokemons/charmeleon-shiny.png",
+          "docs/assets/imgs/pokemons/charmeleon-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -210,8 +210,8 @@ const data = [
     accuracy: 70,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 50,
       sizeY: 50,
@@ -234,12 +234,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/charizard.png",
-          "/docs/assets/imgs/pokemons/charizard-right.png",
+          "docs/assets/imgs/pokemons/charizard.png",
+          "docs/assets/imgs/pokemons/charizard-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/charizard-shiny.png",
-          "/docs/assets/imgs/pokemons/charizard-shiny-right.png",
+          "docs/assets/imgs/pokemons/charizard-shiny.png",
+          "docs/assets/imgs/pokemons/charizard-shiny-right.png",
         ],
       },
       sizeX: 137,
@@ -249,8 +249,8 @@ const data = [
     accuracy: 90,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 75,
       sizeY: 75,
@@ -273,12 +273,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/squirtle.png",
-          "/docs/assets/imgs/pokemons/squirtle-right.png",
+          "docs/assets/imgs/pokemons/squirtle.png",
+          "docs/assets/imgs/pokemons/squirtle-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/squirtle-shiny.png",
-          "/docs/assets/imgs/pokemons/squirtle-shiny-right.png",
+          "docs/assets/imgs/pokemons/squirtle-shiny.png",
+          "docs/assets/imgs/pokemons/squirtle-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -288,8 +288,8 @@ const data = [
     accuracy: 50,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 25,
       sizeY: 25,
@@ -312,12 +312,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/wartortle.png",
-          "/docs/assets/imgs/pokemons/wartortle-right.png",
+          "docs/assets/imgs/pokemons/wartortle.png",
+          "docs/assets/imgs/pokemons/wartortle-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/wartortle-shiny.png",
-          "/docs/assets/imgs/pokemons/wartortle-shiny-right.png",
+          "docs/assets/imgs/pokemons/wartortle-shiny.png",
+          "docs/assets/imgs/pokemons/wartortle-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -327,8 +327,8 @@ const data = [
     accuracy: 70,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 50,
       sizeY: 50,
@@ -351,12 +351,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/blastoise.png",
-          "/docs/assets/imgs/pokemons/blastoise-right.png",
+          "docs/assets/imgs/pokemons/blastoise.png",
+          "docs/assets/imgs/pokemons/blastoise-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/blastoise-shiny.png",
-          "/docs/assets/imgs/pokemons/blastoise-shiny-right.png",
+          "docs/assets/imgs/pokemons/blastoise-shiny.png",
+          "docs/assets/imgs/pokemons/blastoise-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -366,8 +366,8 @@ const data = [
     accuracy: 90,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 75,
       sizeY: 75,
@@ -390,12 +390,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/pikachu.png",
-          "/docs/assets/imgs/pokemons/pikachu-right.png",
+          "docs/assets/imgs/pokemons/pikachu.png",
+          "docs/assets/imgs/pokemons/pikachu-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/pikachu-shiny.png",
-          "/docs/assets/imgs/pokemons/pikachu-shiny-right.png",
+          "docs/assets/imgs/pokemons/pikachu-shiny.png",
+          "docs/assets/imgs/pokemons/pikachu-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -405,8 +405,8 @@ const data = [
     accuracy: 50,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 25,
       sizeY: 25,
@@ -429,12 +429,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/raichu.png",
-          "/docs/assets/imgs/pokemons/raichu-right.png",
+          "docs/assets/imgs/pokemons/raichu.png",
+          "docs/assets/imgs/pokemons/raichu-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/raichu-shiny.png",
-          "/docs/assets/imgs/pokemons/raichu-shiny-right.png",
+          "docs/assets/imgs/pokemons/raichu-shiny.png",
+          "docs/assets/imgs/pokemons/raichu-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -444,8 +444,8 @@ const data = [
     accuracy: 70,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 50,
       sizeY: 50,
@@ -468,12 +468,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/mew.png",
-          "/docs/assets/imgs/pokemons/mew-right.png",
+          "docs/assets/imgs/pokemons/mew.png",
+          "docs/assets/imgs/pokemons/mew-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/mew-shiny.png",
-          "/docs/assets/imgs/pokemons/mew-shiny-right.png",
+          "docs/assets/imgs/pokemons/mew-shiny.png",
+          "docs/assets/imgs/pokemons/mew-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -483,8 +483,8 @@ const data = [
     accuracy: 100,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 75,
       sizeY: 75,
@@ -507,12 +507,12 @@ const data = [
     img: {
       url: {
         normal: [
-          "/docs/assets/imgs/pokemons/mewtwo.png",
-          "/docs/assets/imgs/pokemons/mewtwo-right.png",
+          "docs/assets/imgs/pokemons/mewtwo.png",
+          "docs/assets/imgs/pokemons/mewtwo-right.png",
         ],
         shiny: [
-          "/docs/assets/imgs/pokemons/mewtwo-shiny.png",
-          "/docs/assets/imgs/pokemons/mewtwo-shiny-right.png",
+          "docs/assets/imgs/pokemons/mewtwo-shiny.png",
+          "docs/assets/imgs/pokemons/mewtwo-shiny-right.png",
         ],
       },
       sizeX: 120,
@@ -522,8 +522,8 @@ const data = [
     accuracy: 100,
     attackImg: {
       url: [
-        "/docs/assets/imgs/attacks/fire-ball.png",
-        "/docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/fire-ball.png",
+        "docs/assets/imgs/attacks/fire-ball-right.png",
       ],
       sizeX: 75,
       sizeY: 75,

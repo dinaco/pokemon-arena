@@ -19,6 +19,35 @@ class Enemies {
     this.criticalHit = 0;
     this.hitPower = 0;
     this.attackList = [];
+    this.direction = Math.round(Math.random());
+    this.imgSizeX = this.data.img.sizeX;
+    this.imgSizeY = this.data.img.sizeY;
+  }
+  attack() {
+    if (this.attackList.length > 0) {
+      for (let i = 0; i < this.attackList.length; i++) {
+        this.attackList[i].drawAttack();
+        if (
+          this.attackList[i].x < 0 ||
+          this.attackList[i].x > this.game.cWidth
+        ) {
+          this.attackList.pop();
+          return false;
+        } else {
+          this.game.newPoke.dead(this.attackList[i]);
+        }
+      }
+    } else {
+      this.attackList.push(
+        new Attack(
+          this,
+          this.x,
+          //this.direction !== "right" ? this.x : this.x + 200,
+          this.y,
+          this.direction
+        )
+      );
+    }
   }
   drawCharacter() {
     if (this.level < 5) {
@@ -27,7 +56,7 @@ class Enemies {
       randomX == 1 ? (this.x += 5) : (this.x -= 5);
       randomY == 1 ? (this.y += 5) : (this.y -= 5);
     }
-    this.img.src = this.data.img.url.normal[0];
+    this.img.src = this.data.img.url.normal[this.direction];
     this.game.ctx.drawImage(
       this.img,
       0,
@@ -78,7 +107,7 @@ class Enemies {
             "special-info"
           ).innerHTML = `Weak against <b>${
             enemy.data.type
-          }</b>  type Pokemon. Penalty ${Math.ceil(
+          }</b>  type Pokemon. Penalty ${Math.round(
             (this.weakness.penalty - 1) * 100
           )}%`;
         } else if (enemy.data.type === this.bonus.type) {
@@ -95,7 +124,7 @@ class Enemies {
             "special-info"
           ).innerHTML = `Strong against <b>${
             enemy.data.type
-          }</b> type Pokemon.  Bonus ${Math.ceil(
+          }</b> type Pokemon.  Bonus ${Math.round(
             (this.bonus.powerBonus - 1) * 100
           )}%`;
         } else {
@@ -109,7 +138,7 @@ class Enemies {
 
           document.getElementById("special-info").innerHTML = ``;
         }
-        document.getElementById("last-damage").innerHTML =
+        document.getElementById("damage-dealt").innerHTML =
           this.hitPower.toFixed(2);
         this.game.newPoke.attackList.pop();
         if (this.hp <= 0) {
@@ -117,30 +146,5 @@ class Enemies {
         }
       }
     }
-  }
-  attack() {
-    //  if (this.attackList.length > 0) {
-    for (let i = 0; i < this.attackList.length; i++) {
-      this.attackList[i].drawAttack();
-      if (this.attackList[i].x < 0 || this.attackList[i].x > this.game.cWidth) {
-        this.attackList.pop();
-        return false;
-      } else {
-        this.game.kill();
-        console.log("kill function");
-      }
-    }
-    // } else {
-    this.attackList.push(
-      new Attack(
-        this,
-        this.x,
-        //this.direction !== "right" ? this.x : this.x + 200,
-        this.y,
-        0
-        //this.direction
-      )
-    );
-    //   }
   }
 }

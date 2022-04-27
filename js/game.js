@@ -14,8 +14,7 @@ class Game {
       this,
       this.cWidth / 2 - 50,
       this.cHeight / 2 - 50,
-      data[this.chosenPoke],
-      false
+      data[this.chosenPoke]
     );
     this.enemies = [];
     this.obstacles = [];
@@ -54,15 +53,20 @@ class Game {
   createEnemies() {
     for (let i = 0; i < this.enemies.length; i++) {
       if (
-        this.enemies[i].x < 0 ||
-        this.enemies[i].x > this.cWidth ||
-        this.enemies[i].y < 0 ||
-        this.enemies[i].y > this.cHeight
+        this.enemies[i].x < 0 - 50 ||
+        this.enemies[i].x > this.cWidth - 50 ||
+        this.enemies[i].y < 0 - 50 ||
+        this.enemies[i].y > this.cHeight - 50
       ) {
         this.enemies.splice([i], 1);
       } else {
-        /*      let randomEnemyAttack = Math.floor(Math.random() * 1000 + 1);
-        randomEnemyAttack <= 2 ? this.enemies[i].attack() : ""; */
+        if (this.enemies[i].data.attackImg != null) {
+          let randomEnemyAttack = Math.floor(Math.random() * 2 + 1);
+          randomEnemyAttack <= 2 ? this.enemies[i].attack() : "";
+        }
+        this.enemies[i].attackList.length > 0
+          ? this.enemies[i].attack(this.enemies[i].attackList)
+          : false;
         this.enemies[i].drawCharacter();
       }
     }
@@ -87,7 +91,7 @@ class Game {
         let maxY = this.cHeight - 100;
         let y = Math.floor(Math.random() * (maxY - minY) + minY);
 
-        this.enemies.push(new Pokemon(this, x, y, data[this.randomPoke], true));
+        this.enemies.push(new Enemies(this, x, y, data[this.randomPoke], 100));
       }
     }
   }
@@ -106,7 +110,7 @@ class Game {
       let maxY = this.cHeight - 100;
       let y = Math.floor(Math.random() * (maxY - minY) + minY);
 
-      this.enemies.push(new Pokemon(this, x, y, data[0], true));
+      this.enemies.push(new Enemies(this, x, y, data[0], 75));
     }
   }
   checkGameOver() {
@@ -149,8 +153,7 @@ class Game {
       this,
       this.cWidth / 2 - 50,
       this.cHeight / 2 - 50,
-      data[0],
-      false
+      data[0]
     );
     this.newPoke.drawCharacter();
   }
