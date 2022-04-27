@@ -5,7 +5,7 @@ const data = [
     level: Infinity,
     hp: Infinity,
     sp: Infinity,
-    attack: {
+    attackPower: {
       power: Infinity,
       weakness: { type: null, penalty: 1 },
       bonus: { type: null, powerBonus: 1 },
@@ -17,6 +17,7 @@ const data = [
       },
       sizeX: 50,
       sizeY: 50,
+      size: 75,
     },
     accuracy: 100,
     attackImg: null,
@@ -29,7 +30,7 @@ const data = [
     level: 1,
     hp: 10,
     sp: 10,
-    attack: {
+    attackPower: {
       power: 2,
       weakness: { type: "fire", penalty: 0.8 },
       bonus: { type: "water", powerBonus: 1.2 },
@@ -48,6 +49,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 50,
     attackImg: {
@@ -67,7 +69,7 @@ const data = [
     level: 2,
     hp: 20,
     sp: 20,
-    attack: {
+    attackPower: {
       power: 3,
       weakness: { type: "fire", penalty: 0.8 },
       bonus: { type: "water", powerBonus: 1.2 },
@@ -86,6 +88,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 70,
     attackImg: {
@@ -105,7 +108,7 @@ const data = [
     level: 3,
     hp: 50,
     sp: 50,
-    attack: {
+    attackPower: {
       power: 4,
       weakness: { type: "fire", penalty: 0.8 },
       bonus: { type: "water", powerBonus: 1.2 },
@@ -124,6 +127,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 90,
     attackImg: {
@@ -143,7 +147,7 @@ const data = [
     level: 1,
     hp: 10,
     sp: 10,
-    attack: {
+    attackPower: {
       power: 2,
       weakness: { type: "water", penalty: 0.8 },
       bonus: { type: "grass", powerBonus: 1.2 },
@@ -162,6 +166,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 50,
     attackImg: {
@@ -181,7 +186,7 @@ const data = [
     level: 2,
     hp: 20,
     sp: 20,
-    attack: {
+    attackPower: {
       power: 3,
       weakness: { type: "water", penalty: 0.8 },
       bonus: { type: "grass", powerBonus: 1.2 },
@@ -200,6 +205,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 70,
     attackImg: {
@@ -219,7 +225,7 @@ const data = [
     level: 3,
     hp: 50,
     sp: 50,
-    attack: {
+    attackPower: {
       power: 4,
       weakness: { type: "water", penalty: 0.8 },
       bonus: { type: "grass", powerBonus: 1.2 },
@@ -238,6 +244,7 @@ const data = [
       },
       sizeX: 137,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 90,
     attackImg: {
@@ -257,7 +264,7 @@ const data = [
     level: 1,
     hp: 10,
     sp: 10,
-    attack: {
+    attackPower: {
       power: 2,
       weakness: { type: "grass", penalty: 0.8 },
       bonus: { type: "fire", powerBonus: 1.2 },
@@ -276,6 +283,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 50,
     attackImg: {
@@ -295,7 +303,7 @@ const data = [
     level: 2,
     hp: 20,
     sp: 20,
-    attack: {
+    attackPower: {
       power: 3,
       weakness: { type: "grass", penalty: 0.8 },
       bonus: { type: "fire", powerBonus: 1.2 },
@@ -314,6 +322,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 70,
     attackImg: {
@@ -333,7 +342,7 @@ const data = [
     level: 3,
     hp: 50,
     sp: 50,
-    attack: {
+    attackPower: {
       power: 4,
       weakness: { type: "grass", penalty: 0.8 },
       bonus: { type: "fire", powerBonus: 1.2 },
@@ -352,6 +361,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 90,
     attackImg: {
@@ -371,7 +381,7 @@ const data = [
     level: 1,
     hp: 10,
     sp: 10,
-    attack: {
+    attackPower: {
       power: 2,
       weakness: { type: "grass", penalty: 0.8 },
       bonus: { type: "water", powerBonus: 1.2 },
@@ -390,6 +400,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 50,
     attackImg: {
@@ -409,7 +420,7 @@ const data = [
     level: 2,
     hp: 20,
     sp: 20,
-    attack: {
+    attackPower: {
       power: 3,
       weakness: { type: "grass", penalty: 0.8 },
       bonus: { type: "water", powerBonus: 1.2 },
@@ -428,6 +439,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 70,
     attackImg: {
@@ -447,7 +459,7 @@ const data = [
     level: 10,
     hp: 200,
     sp: 200,
-    attack: {
+    attackPower: {
       power: 200,
       weakness: { type: null, penalty: 1 },
       bonus: { type: null, powerBonus: 1 },
@@ -466,6 +478,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 100,
     attackImg: {
@@ -485,7 +498,7 @@ const data = [
     level: Infinity,
     hp: Infinity,
     sp: Infinity,
-    attack: {
+    attackPower: {
       power: Infinity,
       weakness: { type: null, penalty: 1 },
       bonus: { type: null, powerBonus: 1 },
@@ -504,6 +517,7 @@ const data = [
       },
       sizeX: 120,
       sizeY: 120,
+      size: 100,
     },
     accuracy: 100,
     attackImg: {

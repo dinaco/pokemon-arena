@@ -11,7 +11,7 @@ class Attack {
     this.attackImg.src = "";
     this.attackWidth = null;
     this.attackHeight = null;
-    this.AttackPower = this.data.attack.power;
+    this.AttackPower = this.data.attackPower.power;
   }
   drawAttack() {
     /*     switch (this.newPoke.data.level) {

@@ -13,9 +13,9 @@ class Enemies {
     this.level = this.data.level;
     this.hpScore = this.data.hp;
     this.hp = this.data.hp;
-    this.weakness = this.newPoke.attack.weakness;
-    this.bonus = this.newPoke.attack.bonus;
-    this.attackPower = this.newPoke.attack.power;
+    this.weakness = this.newPoke.attackPower.weakness;
+    this.bonus = this.newPoke.attackPower.bonus;
+    this.attackPower = this.newPoke.attackPower.power;
     this.criticalHit = 0;
     this.hitPower = 0;
     this.attackList = [];

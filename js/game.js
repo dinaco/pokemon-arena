@@ -14,7 +14,8 @@ class Game {
       this,
       this.cWidth / 2 - 50,
       this.cHeight / 2 - 50,
-      data[this.chosenPoke]
+      data[this.chosenPoke],
+      false
     );
     this.enemies = [];
     this.obstacles = [];
@@ -86,7 +87,7 @@ class Game {
         let maxY = this.cHeight - 100;
         let y = Math.floor(Math.random() * (maxY - minY) + minY);
 
-        this.enemies.push(new Enemies(this, x, y, data[this.randomPoke], 100));
+        this.enemies.push(new Pokemon(this, x, y, data[this.randomPoke], true));
       }
     }
   }
@@ -105,7 +106,7 @@ class Game {
       let maxY = this.cHeight - 100;
       let y = Math.floor(Math.random() * (maxY - minY) + minY);
 
-      this.enemies.push(new Enemies(this, x, y, data[0], 75));
+      this.enemies.push(new Pokemon(this, x, y, data[0], true));
     }
   }
   checkGameOver() {
@@ -148,7 +149,8 @@ class Game {
       this,
       this.cWidth / 2 - 50,
       this.cHeight / 2 - 50,
-      data[0]
+      data[0],
+      false
     );
     this.newPoke.drawCharacter();
   }
