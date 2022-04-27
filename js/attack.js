@@ -9,8 +9,8 @@ class Attack {
     this.direction = direction;
     this.attackImg = new Image();
     this.attackImg.src = "";
-    this.attackWidth = 75;
-    this.attackHeight = 75;
+    this.attackWidth = null;
+    this.attackHeight = null;
     this.AttackPower = this.data.attack.power;
   }
   drawAttack() {
@@ -24,12 +24,12 @@ class Attack {
         this.attackHeight = 100;
         break;
     } */
-    this.direction !== "right"
-      ? (this.attackImg.src = this.data.attackImg[0])
-      : (this.attackImg.src = this.data.attackImg[1]);
+    this.attackWidth = this.data.attackImg.sizeX;
+    this.attackHeight = this.data.attackImg.sizeY;
+    this.attackImg.src = this.data.attackImg.url[this.direction];
     this.newPoke.game.ctx.drawImage(
       this.attackImg,
-      this.direction !== "right" ? (this.x -= 20) : (this.x += 20),
+      this.direction !== 1 ? (this.x -= 20) : (this.x += 20),
       this.y,
       this.attackWidth,
       this.attackHeight

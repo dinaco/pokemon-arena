@@ -5,7 +5,7 @@ class Pokemon {
     this.data = data;
     this.x = x;
     this.y = y;
-    this.direction = "left";
+    this.direction = 0;
     this.img = new Image();
     this.attackList = [];
     this.pokeId = this.data.id;
@@ -23,9 +23,6 @@ class Pokemon {
           this.attackList.pop();
           return false;
         } else {
-          /*         this.direction !== "right"
-            ? (this.attackList[i].x -= 20)
-            : (this.attackList[i].x += 20); */
           this.game.kill();
         }
       }
@@ -48,11 +45,11 @@ class Pokemon {
     this.y + 150 <= this.game.cHeight ? (this.y += 50) : false;
   }
   moveLeft() {
-    this.direction = "left";
+    this.direction = 0;
     this.x - 50 >= 0 ? (this.x -= 50) : false;
   }
   moveRight() {
-    this.direction = "right";
+    this.direction = 1;
     this.x + 150 <= this.game.cWidth ? (this.x += 50) : false;
   }
   reset() {
@@ -60,7 +57,7 @@ class Pokemon {
     this.y = cHeight / 2;
   }
   drawCharacter() {
-    this.img.src = this.data.img.url[1];
+    this.img.src = this.data.img.url.shiny[this.direction];
     // this.game.ctx.scale(this.direction === "right" ? -1 : 1, 1);
     this.game.ctx.drawImage(
       this.img,

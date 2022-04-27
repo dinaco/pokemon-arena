@@ -58,9 +58,10 @@ class Game {
         this.enemies[i].y < 0 ||
         this.enemies[i].y > this.cHeight
       ) {
-        console.log(this.enemies);
         this.enemies.splice([i], 1);
       } else {
+        /*      let randomEnemyAttack = Math.floor(Math.random() * 1000 + 1);
+        randomEnemyAttack <= 2 ? this.enemies[i].attack() : ""; */
         this.enemies[i].drawCharacter();
       }
     }

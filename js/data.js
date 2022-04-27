@@ -12,7 +12,9 @@ const data = [
     },
     type: null,
     img: {
-      url: ["/docs/assets/imgs/trees.png", "/docs/assets/imgs/trees.png"],
+      url: {
+        normal: ["/docs/assets/imgs/trees.png", "/docs/assets/imgs/trees.png"],
+      },
       sizeX: 50,
       sizeY: 50,
     },
@@ -48,7 +50,14 @@ const data = [
       sizeY: 120,
     },
     accuracy: 50,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 25,
+      sizeY: 25,
+    },
     evolve: true,
     evolveScore: 100,
   },
@@ -65,15 +74,28 @@ const data = [
     },
     type: "grass",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/002.png",
-        "http://www.serebii.net/Shiny/XY/002.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/ivysaur.png",
+          "/docs/assets/imgs/pokemons/ivysaur-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/ivysaur-shiny.png",
+          "/docs/assets/imgs/pokemons/ivysaur-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 70,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 50,
+      sizeY: 50,
+    },
     evolve: true,
     evolveScore: 300,
   },
@@ -90,15 +112,28 @@ const data = [
     },
     type: "grass",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/003.png",
-        "http://www.serebii.net/Shiny/XY/003.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/venusaur.png",
+          "/docs/assets/imgs/pokemons/venusaur-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/venusaur-shiny.png",
+          "/docs/assets/imgs/pokemons/venusaur-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 90,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 75,
+      sizeY: 75,
+    },
     evolve: false,
     evolveScore: null,
   },
@@ -115,18 +150,28 @@ const data = [
     },
     type: "fire",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/004.png",
-        "http://www.serebii.net/Shiny/XY/004.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/charmander.png",
+          "/docs/assets/imgs/pokemons/charmander-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/charmander-shiny.png",
+          "/docs/assets/imgs/pokemons/charmander-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 50,
-    attackImg: [
-      "/docs/assets/imgs/attacks/fire-ball.png",
-      "/docs/assets/imgs/attacks/fire-ball-right.png",
-    ],
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 25,
+      sizeY: 25,
+    },
     evolve: true,
     evolveScore: 100,
   },
@@ -143,21 +188,34 @@ const data = [
     },
     type: "fire",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/005.png",
-        "http://www.serebii.net/Shiny/XY/005.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/charmeleon.png",
+          "/docs/assets/imgs/pokemons/charmeleon-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/charmeleon-shiny.png",
+          "/docs/assets/imgs/pokemons/charmeleon-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 70,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 50,
+      sizeY: 50,
+    },
     evolve: true,
     evolveScore: 300,
   },
   {
     id: 6,
-    name: "Charizard ",
+    name: "Charizard",
     level: 3,
     hp: 50,
     sp: 50,
@@ -168,15 +226,28 @@ const data = [
     },
     type: "fire",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/006.png",
-        "http://www.serebii.net/Shiny/XY/006.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/charizard.png",
+          "/docs/assets/imgs/pokemons/charizard-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/charizard-shiny.png",
+          "/docs/assets/imgs/pokemons/charizard-shiny-right.png",
+        ],
+      },
       sizeX: 137,
       sizeY: 120,
     },
     accuracy: 90,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 75,
+      sizeY: 75,
+    },
     evolve: false,
     evolveScore: null,
   },
@@ -193,15 +264,28 @@ const data = [
     },
     type: "water",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/007.png",
-        "http://www.serebii.net/Shiny/XY/007.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/squirtle.png",
+          "/docs/assets/imgs/pokemons/squirtle-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/squirtle-shiny.png",
+          "/docs/assets/imgs/pokemons/squirtle-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 50,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 25,
+      sizeY: 25,
+    },
     evolve: true,
     evolveScore: 100,
   },
@@ -218,15 +302,28 @@ const data = [
     },
     type: "water",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/008.png",
-        "http://www.serebii.net/Shiny/XY/008.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/wartortle.png",
+          "/docs/assets/imgs/pokemons/wartortle-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/wartortle-shiny.png",
+          "/docs/assets/imgs/pokemons/wartortle-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 70,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 50,
+      sizeY: 50,
+    },
     evolve: true,
     evolveScore: 300,
   },
@@ -243,15 +340,28 @@ const data = [
     },
     type: "water",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/009.png",
-        "http://www.serebii.net/Shiny/XY/009.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/blastoise.png",
+          "/docs/assets/imgs/pokemons/blastoise-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/blastoise-shiny.png",
+          "/docs/assets/imgs/pokemons/blastoise-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 90,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 75,
+      sizeY: 75,
+    },
     evolve: false,
     evolveScore: null,
   },
@@ -268,15 +378,28 @@ const data = [
     },
     type: "electric",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/025.png",
-        "http://www.serebii.net/Shiny/XY/025.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/pikachu.png",
+          "/docs/assets/imgs/pokemons/pikachu-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/pikachu-shiny.png",
+          "/docs/assets/imgs/pokemons/pikachu-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 50,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 25,
+      sizeY: 25,
+    },
     evolve: true,
     evolveScore: 150,
   },
@@ -293,15 +416,28 @@ const data = [
     },
     type: "electric",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/026.png",
-        "http://www.serebii.net/Shiny/XY/026.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/raichu.png",
+          "/docs/assets/imgs/pokemons/raichu-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/raichu-shiny.png",
+          "/docs/assets/imgs/pokemons/raichu-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 70,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 50,
+      sizeY: 50,
+    },
     evolve: false,
     evolveScore: null,
   },
@@ -318,15 +454,28 @@ const data = [
     },
     type: "mystic",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/151.png",
-        "http://www.serebii.net/Shiny/XY/151.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/mew.png",
+          "/docs/assets/imgs/pokemons/mew-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/mew-shiny.png",
+          "/docs/assets/imgs/pokemons/mew-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 100,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 75,
+      sizeY: 75,
+    },
     evolve: false,
     evolveScore: null,
   },
@@ -343,15 +492,28 @@ const data = [
     },
     type: "mystic",
     img: {
-      url: [
-        "http://www.serebii.net/xy/pokemon/150.png",
-        "http://www.serebii.net/Shiny/XY/150.png",
-      ],
+      url: {
+        normal: [
+          "/docs/assets/imgs/pokemons/mewtwo.png",
+          "/docs/assets/imgs/pokemons/mewtwo-right.png",
+        ],
+        shiny: [
+          "/docs/assets/imgs/pokemons/mewtwo-shiny.png",
+          "/docs/assets/imgs/pokemons/mewtwo-shiny-right.png",
+        ],
+      },
       sizeX: 120,
       sizeY: 120,
     },
     accuracy: 100,
-    attackImg: "/docs/assets/imgs/fire-ball.png",
+    attackImg: {
+      url: [
+        "/docs/assets/imgs/attacks/fire-ball.png",
+        "/docs/assets/imgs/attacks/fire-ball-right.png",
+      ],
+      sizeX: 75,
+      sizeY: 75,
+    },
     evolve: false,
     evolveScore: null,
   },

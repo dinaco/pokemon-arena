@@ -7,7 +7,6 @@ class Enemies {
     this.x = x;
     this.y = y;
     this.img = new Image();
-    this.img.src = this.data.img.url[0];
     this.imgSizeX = this.data.img.sizeX;
     this.imgSizeY = this.data.img.sizeY;
     this.imgSize = imgSize;
@@ -19,6 +18,7 @@ class Enemies {
     this.attackPower = this.newPoke.attack.power;
     this.criticalHit = 0;
     this.hitPower = 0;
+    this.attackList = [];
   }
   drawCharacter() {
     if (this.level < 5) {
@@ -27,6 +27,7 @@ class Enemies {
       randomX == 1 ? (this.x += 5) : (this.x -= 5);
       randomY == 1 ? (this.y += 5) : (this.y -= 5);
     }
+    this.img.src = this.data.img.url.normal[0];
     this.game.ctx.drawImage(
       this.img,
       0,
@@ -75,7 +76,11 @@ class Enemies {
 
           document.getElementById(
             "special-info"
-          ).innerHTML = `Weak against <b>${enemy.data.type}</b>  type Pokemon`;
+          ).innerHTML = `Weak against <b>${
+            enemy.data.type
+          }</b>  type Pokemon. Penalty ${Math.ceil(
+            (this.weakness.penalty - 1) * 100
+          )}%`;
         } else if (enemy.data.type === this.bonus.type) {
           this.hitPower =
             ((this.attackPower * Math.floor(Math.random() * 5 + 1)) /
@@ -88,7 +93,11 @@ class Enemies {
 
           document.getElementById(
             "special-info"
-          ).innerHTML = `Strong against <b>${enemy.data.type}</b> type Pokemon`;
+          ).innerHTML = `Strong against <b>${
+            enemy.data.type
+          }</b> type Pokemon.  Bonus ${Math.ceil(
+            (this.bonus.powerBonus - 1) * 100
+          )}%`;
         } else {
           this.hitPower =
             ((this.attackPower * Math.floor(Math.random() * 5 + 1)) /
@@ -108,5 +117,30 @@ class Enemies {
         }
       }
     }
+  }
+  attack() {
+    //  if (this.attackList.length > 0) {
+    for (let i = 0; i < this.attackList.length; i++) {
+      this.attackList[i].drawAttack();
+      if (this.attackList[i].x < 0 || this.attackList[i].x > this.game.cWidth) {
+        this.attackList.pop();
+        return false;
+      } else {
+        this.game.kill();
+        console.log("kill function");
+      }
+    }
+    // } else {
+    this.attackList.push(
+      new Attack(
+        this,
+        this.x,
+        //this.direction !== "right" ? this.x : this.x + 200,
+        this.y,
+        0
+        //this.direction
+      )
+    );
+    //   }
   }
 }
