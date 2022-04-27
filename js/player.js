@@ -129,6 +129,7 @@ class Pokemon {
         this.hitPower.toFixed(2);
       enemyAttack.newPoke.attackList.pop();
       if (this.hp <= 0) {
+        console.log("Dead!");
         this.game.stop();
         // return true;
       }

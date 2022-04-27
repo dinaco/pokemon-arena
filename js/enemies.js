@@ -50,13 +50,14 @@ class Enemies {
     }
   }
   drawCharacter() {
-    if (this.level < 5) {
-      const randomX = Math.round(Math.random());
+    let randomX = 0;
+    if (this.level < 5 && this.game.frames % 3 == 0) {
+      randomX = Math.round(Math.random());
       const randomY = Math.round(Math.random());
       randomX == 1 ? (this.x += 5) : (this.x -= 5);
       randomY == 1 ? (this.y += 5) : (this.y -= 5);
     }
-    this.img.src = this.data.img.url.normal[this.direction];
+    this.img.src = this.data.img.url.normal[randomX];
     this.game.ctx.drawImage(
       this.img,
       0,

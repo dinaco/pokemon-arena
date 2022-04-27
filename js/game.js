@@ -117,7 +117,7 @@ class Game {
     let updatedTime = Math.floor(this.secondsLeft - this.frames / 30);
     document.getElementById("time-left").innerHTML = `${updatedTime}`;
     if (updatedTime == 0) {
-      console.log("stop");
+      console.log("Time's up!");
       this.stop();
     }
   }
