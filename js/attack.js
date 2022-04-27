@@ -1,6 +1,5 @@
 class Attack {
   // adjust attack image size or get specific image of attack for each level of attack
-  // flip attack image
   constructor(newPoke, x, y, direction) {
     this.newPoke = newPoke;
     this.data = this.newPoke.data;

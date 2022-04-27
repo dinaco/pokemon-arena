@@ -70,7 +70,7 @@ class Game {
         this.enemies[i].drawCharacter();
       }
     }
-    if (this.enemies.length < 12) {
+    if (this.enemies.length < 9) {
       if (this.frames % 60 === 0) {
         if (this.points >= 950 && !this.enemies.some((e) => e.data.id == 13)) {
           this.randomPoke = 13;
@@ -97,10 +97,10 @@ class Game {
   }
   createObstacles() {
     for (let i = 0; i < this.obstacles.length; i++) {
-      this.enemies[i].drawCharacter();
+      this.obstacles[i].drawCharacter();
     }
 
-    if (this.enemies.length < 5) {
+    if (this.obstacles.length < 5) {
       let minX = 0;
       let maxX = this.cWidth - 100;
 
@@ -110,7 +110,7 @@ class Game {
       let maxY = this.cHeight - 100;
       let y = Math.floor(Math.random() * (maxY - minY) + minY);
 
-      this.enemies.push(new Enemies(this, x, y, data[0], 75));
+      this.obstacles.push(new Enemies(this, x, y, data[0], 75));
     }
   }
   checkGameOver() {
@@ -121,8 +121,17 @@ class Game {
       this.stop();
     }
   }
-  stop() {
+  stop(endText) {
     clearInterval(this.intervalId);
+    /*     this.ctx.clearRect(0, 0, this.width, this.height);
+    this.background.src = "docs/assets/imgs/tile.jpg";
+    let tilePattern = this.ctx.createPattern(this.background, "repeat");
+    this.ctx.fillStyle = tilePattern;
+    this.ctx.fillRect(0, 0, this.cWidth, this.cHeight);
+    this.ctx.drawImage(this.background, 0, 0, 50, 50); */
+    this.ctx.font = "36px serif";
+    this.ctx.fillStyle = "black";
+    this.ctx.fillText(endText, this.width / 2, this.height / 2);
   }
   drawBackground() {
     this.background.src = "docs/assets/imgs/grass-tile-1.png";
@@ -137,6 +146,11 @@ class Game {
         this.score(this.enemies[i].hpScore);
         this.enemies.splice([i], 1);
       }
+    });
+  }
+  checkObstaclesHit() {
+    this.obstacles.map((el) => {
+      el.dead(el);
     });
   }
   score(kills) {

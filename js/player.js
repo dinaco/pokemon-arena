@@ -1,5 +1,4 @@
 class Pokemon {
-  // flip pokemon image makes the controls not work sometimes (issue with controls, problably moveright())
   constructor(game, x, y, data) {
     this.game = game;
     this.data = data;
@@ -26,6 +25,7 @@ class Pokemon {
           return false;
         } else {
           this.game.kill();
+          this.game.checkObstaclesHit();
         }
       }
     } else {
@@ -80,10 +80,6 @@ class Pokemon {
     this.game.ctx.fillRect(this.x + 25, this.y + 90, this.hpScore - this.hp, 5);
   }
   dead(enemyAttack) {
-    /*     const getTrees = this.game.enemies.map((e) => {
-      if (e.data.id == 0) return e;
-    });
-    console.log(getTrees); */
     if (
       enemyAttack.x <= this.x + 25 &&
       enemyAttack.x >= this.x &&
@@ -129,8 +125,7 @@ class Pokemon {
         this.hitPower.toFixed(2);
       enemyAttack.newPoke.attackList.pop();
       if (this.hp <= 0) {
-        console.log("Dead!");
-        this.game.stop();
+        this.game.stop("Dead");
         // return true;
       }
     }

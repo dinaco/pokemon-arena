@@ -1,4 +1,3 @@
-// align health bar properly
 class Enemies {
   constructor(game, x, y, data, imgSize) {
     this.game = game;
@@ -35,6 +34,7 @@ class Enemies {
           return false;
         } else {
           this.game.newPoke.dead(this.attackList[i]);
+          this.game.checkObstaclesHit(this.attackList[i]);
         }
       }
     } else {
