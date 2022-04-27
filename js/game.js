@@ -10,12 +10,6 @@ class Game {
     this.intervalId = null;
     this.randomPoke = null;
     this.chosenPoke = 4;
-    this.newPoke = new Pokemon(
-      this,
-      this.cWidth / 2 - 50,
-      this.cHeight / 2 - 50,
-      data[this.chosenPoke]
-    );
     this.enemies = [];
     this.obstacles = [];
     this.controls = null;
@@ -24,6 +18,12 @@ class Game {
     this.secondsLeft = 120;
   }
   start() {
+    this.newPoke = new Pokemon(
+      this,
+      this.cWidth / 2 - 50,
+      this.cHeight / 2 - 50,
+      data[this.chosenPoke]
+    );
     this.createEnemies();
     this.controls = new Controls(this);
     this.controls.keyboardEvents();
@@ -61,7 +61,7 @@ class Game {
         this.enemies.splice([i], 1);
       } else {
         if (this.enemies[i].data.attackImg != null) {
-          let randomEnemyAttack = Math.floor(Math.random() * 2 + 1);
+          let randomEnemyAttack = Math.floor(Math.random() * 1000 + 1);
           randomEnemyAttack <= 2 ? this.enemies[i].attack() : "";
         }
         this.enemies[i].attackList.length > 0
@@ -125,7 +125,7 @@ class Game {
     clearInterval(this.intervalId);
   }
   drawBackground() {
-    this.background.src = "/docs/assets/imgs/grass-tile-1.png";
+    this.background.src = "docs/assets/imgs/grass-tile-1.png";
     let tilePattern = this.ctx.createPattern(this.background, "repeat");
     this.ctx.fillStyle = tilePattern;
     this.ctx.fillRect(0, 0, this.cWidth, this.cHeight);
@@ -149,12 +149,12 @@ class Game {
     this.ctx.fillStyle = "red";
     this.ctx.rect(0, 0, this.cWidth, this.cHeight);
     this.ctx.fill(); */
-    this.newPoke = new Pokemon(
+    /*     this.newPoke = new Pokemon(
       this,
       this.cWidth / 2 - 50,
       this.cHeight / 2 - 50,
       data[0]
     );
-    this.newPoke.drawCharacter();
+    this.newPoke.drawCharacter(); */
   }
 }

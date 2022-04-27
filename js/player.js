@@ -80,7 +80,10 @@ class Pokemon {
     this.game.ctx.fillRect(this.x + 25, this.y + 90, this.hpScore - this.hp, 5);
   }
   dead(enemyAttack) {
-    //   if (this.game.newPoke.attackList[0]) {
+    /*     const getTrees = this.game.enemies.map((e) => {
+      if (e.data.id == 0) return e;
+    });
+    console.log(getTrees); */
     if (
       enemyAttack.x <= this.x + 25 &&
       enemyAttack.x >= this.x &&
@@ -130,6 +133,5 @@ class Pokemon {
         // return true;
       }
     }
-    //   }
   }
 }
