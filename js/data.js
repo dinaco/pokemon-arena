@@ -54,8 +54,8 @@ const data = [
     accuracy: 50,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/grass-attack.png",
+        "docs/assets/imgs/attacks/grass-attack-right.png",
       ],
       sizeX: 25,
       sizeY: 25,
@@ -93,8 +93,8 @@ const data = [
     accuracy: 70,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/grass-attack.png",
+        "docs/assets/imgs/attacks/grass-attack-right.png",
       ],
       sizeX: 50,
       sizeY: 50,
@@ -132,8 +132,8 @@ const data = [
     accuracy: 90,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/grass-attack.png",
+        "docs/assets/imgs/attacks/grass-attack-right.png",
       ],
       sizeX: 75,
       sizeY: 75,
@@ -266,7 +266,7 @@ const data = [
     sp: 10,
     attackPower: {
       power: 2,
-      weakness: { type: "grass", penalty: 0.8 },
+      weakness: { type: "electric", penalty: 0.8 },
       bonus: { type: "fire", powerBonus: 1.2 },
     },
     type: "water",
@@ -288,8 +288,8 @@ const data = [
     accuracy: 50,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/water-attack.png",
+        "docs/assets/imgs/attacks/water-attack-right.png",
       ],
       sizeX: 25,
       sizeY: 25,
@@ -305,7 +305,7 @@ const data = [
     sp: 20,
     attackPower: {
       power: 3,
-      weakness: { type: "grass", penalty: 0.8 },
+      weakness: { type: "electric", penalty: 0.8 },
       bonus: { type: "fire", powerBonus: 1.2 },
     },
     type: "water",
@@ -327,8 +327,8 @@ const data = [
     accuracy: 70,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/water-attack.png",
+        "docs/assets/imgs/attacks/water-attack-right.png",
       ],
       sizeX: 50,
       sizeY: 50,
@@ -344,7 +344,7 @@ const data = [
     sp: 50,
     attackPower: {
       power: 4,
-      weakness: { type: "grass", penalty: 0.8 },
+      weakness: { type: "electric", penalty: 0.8 },
       bonus: { type: "fire", powerBonus: 1.2 },
     },
     type: "water",
@@ -366,8 +366,8 @@ const data = [
     accuracy: 90,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/water-attack.png",
+        "docs/assets/imgs/attacks/water-attack-right.png",
       ],
       sizeX: 75,
       sizeY: 75,
@@ -405,8 +405,8 @@ const data = [
     accuracy: 50,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/electric-attack.png",
+        "docs/assets/imgs/attacks/electric-attack-right.png",
       ],
       sizeX: 25,
       sizeY: 25,
@@ -444,8 +444,8 @@ const data = [
     accuracy: 70,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/electric-attack.png",
+        "docs/assets/imgs/attacks/electric-attack-right.png",
       ],
       sizeX: 50,
       sizeY: 50,
@@ -483,8 +483,8 @@ const data = [
     accuracy: 100,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/mew-attack.png",
+        "docs/assets/imgs/attacks/mew-attack-right.png",
       ],
       sizeX: 75,
       sizeY: 75,
@@ -522,8 +522,8 @@ const data = [
     accuracy: 100,
     attackImg: {
       url: [
-        "docs/assets/imgs/attacks/fire-ball.png",
-        "docs/assets/imgs/attacks/fire-ball-right.png",
+        "docs/assets/imgs/attacks/mew-attack.png",
+        "docs/assets/imgs/attacks/mew-attack-right.png",
       ],
       sizeX: 75,
       sizeY: 75,
