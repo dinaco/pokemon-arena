@@ -104,13 +104,7 @@ class Enemies {
 
           this.hp -= this.hitPower;
 
-          /*           document.getElementById(
-            "special-info"
-          ).innerHTML = `Weak against <b>${
-            enemy.data.type
-          }</b>  type Pokemon. Penalty ${Math.round(
-            (this.weakness.penalty - 1) * 100
-          )}%`; */
+          document.getElementById("damage-dealt").style.color = "red";
         } else if (enemy.data.type === this.bonus.type) {
           this.hitPower =
             ((this.attackPower * Math.floor(Math.random() * 5 + 1)) /
@@ -121,13 +115,7 @@ class Enemies {
 
           this.hp -= this.hitPower;
 
-          /*           document.getElementById(
-            "special-info"
-          ).innerHTML = `Strong against <b>${
-            enemy.data.type
-          }</b> type Pokemon.  Bonus ${Math.round(
-            (this.bonus.powerBonus - 1) * 100
-          )}%`; */
+          document.getElementById("damage-dealt").style.color = "green";
         } else {
           this.hitPower =
             ((this.attackPower * Math.floor(Math.random() * 5 + 1)) /
@@ -137,7 +125,7 @@ class Enemies {
 
           this.hp -= this.hitPower;
 
-          // document.getElementById("special-info").innerHTML = ``;
+          document.getElementById("damage-dealt").style.color = "black";
         }
         document.getElementById(
           "damage-dealt"

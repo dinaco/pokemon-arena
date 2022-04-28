@@ -99,7 +99,7 @@ class Pokemon {
           enemyAttack.data.attackPower.weakness.penalty *
           enemyAttack.data.level *
           this.criticalHit;
-
+        document.getElementById("damage-taken").style.color = "green";
         this.hp -= this.hitPower;
       } else if (this.data.type === enemyAttack.data.attackPower.bonus.type) {
         this.hitPower =
@@ -109,7 +109,7 @@ class Pokemon {
           enemyAttack.data.attackPower.bonus.powerBonus *
           enemyAttack.data.level *
           this.criticalHit;
-
+        document.getElementById("damage-taken").style.color = "red";
         this.hp -= this.hitPower;
       } else {
         this.hitPower =
@@ -120,6 +120,7 @@ class Pokemon {
           this.criticalHit;
 
         this.hp -= this.hitPower;
+        document.getElementById("damage-taken").style.color = "black";
       }
       document.getElementById(
         "damage-taken"

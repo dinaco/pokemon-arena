@@ -163,7 +163,9 @@ class Game {
     this.game = null;
     document.getElementById("score-info").innerHTML = "Score: 0";
     document.getElementById("damage-dealt").innerHTML = "Dealt: 0";
+    document.getElementById("damage-dealt").style.color = "black";
     document.getElementById("damage-taken").innerHTML = "Taken: 0";
+    document.getElementById("damage-taken").style.color = "black";
   }
   drawBackground() {
     this.background.src = "docs/assets/imgs/grass-tile-1.png";
