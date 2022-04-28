@@ -5,30 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <title>Brawl Arena</title>
   </head>
   <body>
     <div class="container">
       <main>
-        <canvas width="900" height="600" id="game-board"></canvas>
-        <div id="game-info">
-          <img src="docs/assets/imgs/pokemon-logo.png" alt="Pokemon logo" />
-          <div class="description">
-            Use your arrow keys to move your pokemon and hit space to attack
-            your opponents.
+        <canvas width="900" height="600" id="game-board" style="border: 1px solid white;border-radius: 15px;"></canvas>
+        <div id="choose-poke">
+          <div id="poke-list">
+            <span id="1" class="poke">
+            <img src="docs/assets/imgs/pokemons/bulbasaur-shiny.png" alt="Bulbasaur" class="poke-img" id="1" >
+          </span>
+          <span id="4" class="poke">
+            <img src="docs/assets/imgs/pokemons/charmander-shiny.png" alt="Charmander" class="poke-img" id="4" >
+          </span>
+          <span id="7" class="poke">
+            <img src="docs/assets/imgs/pokemons/squirtle-shiny.png" alt="Squirtle" class="poke-img" id="7" >
+          </span>
+          <span id="10" class="poke">
+            <img src="docs/assets/imgs/pokemons/pikachu-shiny.png" alt="Pikachu" class="poke-img" id="10">
+          </span>
           </div>
-          <div id="damage-info">
-            Damage dealt: <span id="damage-dealt">0</span>
-            <span id="special-info"></span> | Damage taken:
-            <span id="damage-taken">0</span>
+          <div id="game-info" class="hidden">
+            <div id="damage-info">
+              <div>Damage: </div><div id="damage-dealt">Dealt: 0</div>
+             <!--  <div id="special-info"></div> -->
+              <div id="damage-taken">Taken: 0</div>
+            </div>
+            <div id="score-info">Score: 0</div>
+  
+            
+            <div id="countdown">
+               <div id="countdown-number">120</div>
+              <svg>
+                <circle id="countdown-svg" class="" r="35" cx="40" cy="40"></circle>
+              </svg>
+            </div>
           </div>
-
-          <div id="score-info">Score: <span id="score">0</span></div>
-          <div id="time-left-info">
-            Time Left: <span id="time-left">0</span>
           </div>
         </div>
-      </main>
+        </main>
     </div>
     <script src="js/data.js"></script>
     <script src="js/attack.js"></script>

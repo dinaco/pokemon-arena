@@ -9,20 +9,25 @@ class Game {
     this.cHeight = this.canvas.height;
     this.intervalId = null;
     this.randomPoke = null;
-    this.chosenPoke = 4;
     this.enemies = [];
     this.obstacles = [];
     this.controls = null;
     this.frames = 0;
     this.points = 0;
+    this.chosenPoke = 0;
     this.secondsLeft = 120;
+    this.backgroundGameOver = new Image();
+    this.backgroundGameOver.src = "docs/assets/imgs/game-over.jpg";
+    this.startScreen = new Image();
+    this.startScreen.src = "docs/assets/imgs/start-canvas-image.jpg";
   }
-  start() {
+  start(chosenPoke) {
+    this.chosenPoke = chosenPoke;
     this.newPoke = new Pokemon(
       this,
       this.cWidth / 2 - 50,
       this.cHeight / 2 - 50,
-      data[this.chosenPoke]
+      data[chosenPoke]
     );
     this.createEnemies();
     this.controls = new Controls(this);
@@ -32,14 +37,14 @@ class Game {
     }, 30);
   }
   update() {
-    this.checkGameOver();
-    this.ctx.clearRect(0, 0, this.width, this.height);
+    this.ctx.clearRect(0, 0, this.cWidth, this.cHeight);
     this.frames++;
     this.drawBackground();
     this.createObstacles();
     this.createEnemies();
     this.checkPowerUp();
     this.newPoke.attackList.length > 0 ? this.newPoke.attack() : false;
+    this.checkGameOver();
   }
   checkPowerUp() {
     if (
@@ -61,7 +66,7 @@ class Game {
         this.enemies.splice([i], 1);
       } else {
         if (this.enemies[i].data.attackImg != null) {
-          let randomEnemyAttack = Math.floor(Math.random() * 1000 + 1);
+          let randomEnemyAttack = Math.floor(Math.random() * 750 + 1);
           randomEnemyAttack <= 2 ? this.enemies[i].attack() : "";
         }
         this.enemies[i].attackList.length > 0
@@ -115,23 +120,50 @@ class Game {
   }
   checkGameOver() {
     let updatedTime = Math.floor(this.secondsLeft - this.frames / 30);
-    document.getElementById("time-left").innerHTML = `${updatedTime}`;
+    document.getElementById("countdown-number").textContent = updatedTime;
     if (updatedTime == 0) {
-      console.log("Time's up!");
-      this.stop();
+      this.stop("Well done");
     }
   }
   stop(endText) {
-    clearInterval(this.intervalId);
-    /*     this.ctx.clearRect(0, 0, this.width, this.height);
-    this.background.src = "docs/assets/imgs/tile.jpg";
-    let tilePattern = this.ctx.createPattern(this.background, "repeat");
-    this.ctx.fillStyle = tilePattern;
-    this.ctx.fillRect(0, 0, this.cWidth, this.cHeight);
-    this.ctx.drawImage(this.background, 0, 0, 50, 50); */
-    this.ctx.font = "36px serif";
+    document.getElementById("countdown-svg").classList = "paused";
+
+    this.ctx.clearRect(0, 0, this.cWidth, this.cHeight);
+    this.ctx.drawImage(
+      this.backgroundGameOver,
+      0,
+      0,
+      this.cWidth,
+      this.cHeight
+    );
+    this.ctx.font = "36px VT323";
     this.ctx.fillStyle = "black";
-    this.ctx.fillText(endText, this.width / 2, this.height / 2);
+    this.ctx.fillText(
+      `${endText}! Score: ${this.points}`,
+      this.cWidth / 2 - 125,
+      this.cHeight / 2 + 25
+    );
+    this.ctx.fillText(
+      `Ready to try again?`,
+      this.cWidth / 2 - 125,
+      this.cHeight / 2 + 150
+    );
+    this.ctx.fillText(
+      `Hit the "Q" key to reset`,
+      this.cWidth / 2 - 150,
+      this.cHeight / 2 + 225
+    );
+    this.enemies = [];
+    this.newPoke = "";
+    this.attackList = [];
+    clearInterval(this.intervalId);
+    this.points = 0;
+    this.secondsLeft = 120;
+    this.frames = 0;
+    this.game = null;
+    document.getElementById("score-info").innerHTML = "Score: 0";
+    document.getElementById("damage-dealt").innerHTML = "Dealt: 0";
+    document.getElementById("damage-taken").innerHTML = "Taken: 0";
   }
   drawBackground() {
     this.background.src = "docs/assets/imgs/grass-tile-1.png";
@@ -155,20 +187,12 @@ class Game {
   }
   score(kills) {
     this.points += kills;
-    (document.getElementById("score").innerHTML = `${this.points}`), 100, 50;
+    (document.getElementById("score-info").innerHTML = `Score: ${this.points}`),
+      100,
+      50;
   }
   preview() {
-    this.drawBackground();
-    /*     this.ctx.beginPath();
-    this.ctx.fillStyle = "red";
-    this.ctx.rect(0, 0, this.cWidth, this.cHeight);
-    this.ctx.fill(); */
-    /*     this.newPoke = new Pokemon(
-      this,
-      this.cWidth / 2 - 50,
-      this.cHeight / 2 - 50,
-      data[0]
-    );
-    this.newPoke.drawCharacter(); */
+    this.ctx.clearRect(0, 0, this.cWidth, this.cHeight);
+    this.ctx.drawImage(this.startScreen, 0, 0, this.cWidth, this.cHeight);
   }
 }

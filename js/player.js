@@ -121,11 +121,12 @@ class Pokemon {
 
         this.hp -= this.hitPower;
       }
-      document.getElementById("damage-taken").innerHTML =
-        this.hitPower.toFixed(2);
+      document.getElementById(
+        "damage-taken"
+      ).innerHTML = `Taken: ${this.hitPower.toFixed(2)}`;
       enemyAttack.newPoke.attackList.pop();
       if (this.hp <= 0) {
-        this.game.stop("Dead");
+        this.game.stop("Defeated");
         // return true;
       }
     }
